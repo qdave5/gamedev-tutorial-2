@@ -1,14 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/StonePlatform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/BlueShip.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/PlatformBlue.gd" type="Script" id=3]
 [ext_resource path="res://scenes/ObjectiveArea.gd" type="Script" id=4]
+[ext_resource path="res://scenes/SecondShip.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/FallZone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/space.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 69.375, 39.5 )
 
 [node name="MainLevel" type="Node"]
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 647.75, 418 )
+scale = Vector2( 0.740308, 0.670968 )
+texture = ExtResource( 7 )
 
 [node name="PlatformBlue" type="Node2D" parent="."]
 position = Vector2( 35, 565 )
@@ -20,13 +28,26 @@ script = ExtResource( 3 )
 position = Vector2( 70, 0 )
 
 [node name="BlueShip" parent="." instance=ExtResource( 2 )]
-position = Vector2( 72.7009, 421.901 )
+position = Vector2( 72.032, 421.901 )
 
 [node name="ObjectiveArea" type="Area2D" parent="."]
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveArea"]
-position = Vector2( 70.625, 40 )
+position = Vector2( 72, 47 )
 shape = SubResource( 1 )
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 298, 425 )
+
+[node name="WinMessage" type="RichTextLabel" parent="."]
+visible = false
+margin_left = 401.0
+margin_top = 290.0
+margin_right = 671.0
+margin_bottom = 330.0
+text = "Congrats, you reach the objective!"
+
+[node name="FallZone" parent="." instance=ExtResource( 6 )]
 
 [connection signal="body_entered" from="ObjectiveArea" to="ObjectiveArea" method="_on_ObjectiveArea_body_entered"]
