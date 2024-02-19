@@ -11,4 +11,3 @@ polygon = PoolVector2Array( -32, -43, -48, 8, -27, 38, 13, 29, 33, 30, 51, 3, 25
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-flip_h = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/BlueShip.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/StonePlatform.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/space.png" type="Texture" id=6]
 [ext_resource path="res://scenes/MeteorBrown.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/FallZone.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -52,6 +53,9 @@ position = Vector2( 954, 399 )
 
 [node name="MeteorBrown" parent="Obstacle" instance=ExtResource( 7 )]
 position = Vector2( 454, 275 )
+
+[node name="Ball" parent="Obstacle" instance=ExtResource( 9 )]
+position = Vector2( 622, 532 )
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource( 4 )
