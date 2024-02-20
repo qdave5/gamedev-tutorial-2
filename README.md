@@ -104,4 +104,7 @@ Pada level baru ini, diharapkan kamu dapat membuat:
         https://docs.godotengine.org/en/3.5/classes/class_scenetreetimer.html
   - [x] Menambahkan gambar latar.
   - [x] Menambahkan rintangan objek statis pada level baru.
+  - [x] Menambahkan animasi pada objek (ubah posisi, rotasi, texture, etc.)
   - Dan lain-lain. Silakan berkreasi!
+
+Note: AnimationPlayer is soo fun!
